@@ -36,4 +36,8 @@ NOTE: The files options in `vm1.nix` & `vm-generic.nix` could be merged into a s
 
 This is a normal Nix file, that builds a full derivation with scripts create a libvirt domain VM from the specification in `vm1.nix`.
 
-The [libvirt tools](../..) are imported and used to evaluate the NixOS configuration
+The libvirt tools (what this repository is all about) are imported (along with the `vm1.nix` file) and used to evaluate the NixOS configuration to a full VM managed by libvirt, and a set of scripts to help using this domain.
+
+## Result
+
+TODO: describe the scripts & files the resulting derivation.
