@@ -6,7 +6,7 @@ This example shows a way to describe a NixOS VM, evaluate its config as a libvir
 
 Build with `nix-build`
 
-Recreate the libvirt domain with `./result/bin/recreate-libvirt-domain--nixos-vm1`
+(Re-)create the libvirt domain with the script `./result/bin/recreate-libvirt-domain--nixos-vm1`
 
 ## Main files
 
@@ -22,13 +22,13 @@ This is a NixOS module, imported in `vm1.nix`. It defines common configurations 
 
 It enables the ssh service (which is declared & defined in another NixOS module in the official nixpkgs repository).
 
-It makes the VM headless, to avoid installing a huge pire of software for a simple VM.
+It makes the VM headless, to avoid installing a huge pile of graphical software for a simple VM.
 
 It makes a single `root` user with password `bla`, adds a nice motd message that will appear when you connect to the VM.
 
 It adds a few packages: `neovim`, `python3`, `curl`.
 
-It disables DHCP for all network interfaces, you should enable it per iterfaces if needed.
+It disables DHCP for all network interfaces, you should enable it per interfaces if needed.
 
 NOTE: The files options in `vm1.nix` & `vm-generic.nix` could be merged into a single file, but in general it's a good practice to split common options and specific options so it's easy to define multiple vms for example.
 

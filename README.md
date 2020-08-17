@@ -27,9 +27,22 @@ These kind of lightweight VMs should not be used for any sensitive work.
 First clone this repository in some location like `/path/to/libvirt-nixos-nix-tools`, then import the tools like any other Nix file using either the directory/file path or a global path using a custom `NIX_PATH`:
 
 ```nix
-libvirtTools = import /path/to/libvirt-nixos-nix-tools;
+let
+  libvirtTools = import /path/to/libvirt-nixos-nix-tools;
 
-# Now you can use the functions in `libvirtTools`
+in your-expression # Now you can use the functions in `libvirtTools`
 ```
 
 You can find an example of usage with documentation in the [`examples/`](examples) directory.
+
+Almost all functions are documented where they are defined, check the source code for all the details, it's all pretty straight forward!
+
+
+---
+
+## Missing
+
+- configurable emulator path for the VM (easy to add)
+- refactor scripts to re-create a domain/network in libvirt
+- (maybe?) get rid of `<nixpkgs/nixos/modules/virtualisation/qemu-vm.nix>` dependency and implement everything I need myself (but byebye compatibility..)
+- many other things... open an issue if you want to see something you need!
