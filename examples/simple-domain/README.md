@@ -40,4 +40,4 @@ The libvirt tools (what this repository is all about) are imported (along with t
 
 ## Result
 
-TODO: describe the scripts & files the resulting derivation.
+TODO: describe the scripts & files in the result of the derivation.
